@@ -4,6 +4,10 @@
 
 This project builds a production-ready data pipeline that combines weather and energy consumption data for 5 major US cities. The goal is to help utilities optimize power generation, reduce waste, and lower costs through better demand forecasting.
 
+## Business Context
+
+Energy companies lose millions of dollars due to inaccurate demand forecasting. By combining weather data with energy consumption patterns, data scientists can help utilities optimize power generation, reduce waste, and lower costs. This project demonstrates ability to build production-ready data pipelines that deliver real business value.
+
 ## Features
 
 - **Automated Data Pipeline:** Fetches daily weather (NOAA) and energy (EIA) data for New York, Chicago, Houston, Phoenix, and Seattle.
@@ -49,11 +53,49 @@ This project builds a production-ready data pipeline that combines weather and e
 
 2. **Install dependencies**
 
-   ```sh
-   pip install -r requirements.txt
-   # or, if using uv:
-   uv pip install -r requirements.txt
-   ```
+    # to set-up , use:
+
+    # On Git Bash on Windows, use:
+    ```sh
+    source .venv/Scripts/activate
+    ```
+
+    # On Command Prompt (cmd.exe), use:
+    .venv\Scripts\activate
+    
+
+    # On macOS/Linux:
+    source .venv/bin/activate
+
+
+    # dependencies manager
+    pip 
+
+    
+    # to install dependencies
+    pip install .
+
+    
+    # Using developer Tools
+    **Format code:** black src/
+
+    **Sort imports:** isort src/
+    
+    **Run tests:** pytest
+    
+    **Check types:** mypy src/
+
+    **Lint:** ruff src/
+
+    # Install Dev Tools (Optional but Recommended)
+
+    **Install dev tools with:**  pip install .[dev]
+
+- Now your tools and dependencies are managed in one place.
+
+
+
+
 
 3. **Configure API keys and cities**
 
@@ -62,18 +104,27 @@ This project builds a production-ready data pipeline that combines weather and e
 4. **Run the pipeline**
 
    ```sh
-   python src/pipeline.py
+      run-pipeline
    ```
 
 5. **Launch the dashboard**
    ```sh
    streamlit run dashboards/app.py
+
+6. **fetch the data**
+   ```sh
+   data_fetcher
    ```
 
 ## Data Sources
 
 - **NOAA Climate Data Online:** [API Docs](https://www.ncei.noaa.gov/cdo-web/api/v2)
 - **EIA Energy API:** [API Docs](https://api.eia.gov/v2/electricity/)
+
+## Registration Requirements:
+
+- **NOAA Climate Data Online:** Register at https://www.ncdc.noaa.gov/cdo-web/token
+- **EIA Energy API:** Register at https://www.eia.gov/opendata/register.php
 
 ## Documentation
 
@@ -91,6 +142,4 @@ MIT License
 
 ---
 
-\*For more details, see each module and the AI_USAGE.md file.*
-
-
+\*For more details, see each module and the AI_USAGE.md file.\*
